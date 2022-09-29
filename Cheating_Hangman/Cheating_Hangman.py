@@ -22,9 +22,7 @@ count = 0
 #group the number of words depending on where a is. if a is the 2nd letter
 #group up words that fulfill that condition. Count how many items are there
 #with a as its 2nd number
-for word in word_list:
-    print(word)
-    new = filter(lambda word: word.index("a") == 0, word_list)
-    ic(new)
-    for x in new:
-        print(x)
+new = filter(lambda word: word.index("a") == 0, word_list)
+ic(new)
+for x in new:
+    print(x)
