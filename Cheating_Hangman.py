@@ -1,5 +1,6 @@
 #Cheating Hangman
 from code import interact
+from os import remove
 from icecream import ic
 import re
 # words_file = open("words.txt","r")
@@ -31,19 +32,14 @@ def get_possible_words(letter):
         print(" ")
     print(index_and_occurances)
     print(f"the most common index is {most_common_index} with {index_and_occurances[most_common_index]} number of occurances")
-    print(word_list)
-    try:
-        for index, word in enumerate(word_list):
-            print(word) #Why did it stop iterating after age? What is affecting the indexing?
-            index_of_letter = word.index(f"{letter}") #this line should be working, word = item. Maybe there 
+    
+    for index, word in enumerate(word_list): 
+        index_of_letter = word.index(f"{letter}") 
+        print(index_of_letter)
+        if index_of_letter != 2:
+            del word_list[index]
+            print(word_list)
 
-            if index_of_letter == int(most_common_index):
-                print("index is =")
-                most_common_pattern.append(word)
-                print(most_common_pattern)
-    except:
-        print("")
-        print(most_common_pattern)
             
     return most_common_index
 blanks = "_ _ _"
@@ -55,6 +51,8 @@ def display_correct_guess(letter,most_common_index):
     result = " ".join(blanks_list)
     print(result)
 display_correct_guess(letter,get_possible_words(letter))
+print(blanks_list)
+print(word_list)
 
 
 
