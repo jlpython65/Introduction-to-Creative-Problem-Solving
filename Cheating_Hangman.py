@@ -39,6 +39,7 @@ def get_possible_words(letter):
         occurances = 0
         print(f"no {letter} in next item")        
     
+
     try:
         for index, word in enumerate(word_list): 
             index_of_letter = word.index(f"{letter}") 
@@ -57,6 +58,7 @@ def display_correct_guess(letter,most_common_index):
     blanks_list[int(most_common_index)] = letter
     result = " ".join(blanks_list)
     print(result)
+    
 display_correct_guess(letter,get_possible_words(letter))
 print(blanks_list)
 print(word_list)
