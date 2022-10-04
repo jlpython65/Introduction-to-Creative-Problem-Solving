@@ -5,7 +5,8 @@ import re
 from icecream import ic
 import statistics
 from statistics import mode
- 
+
+
 index_and_occurances = {}
 
 word_list = ["jam","ham","sam","cam","bam","wam","dim","man","men","ain","age","ann","air","dio","edei","die","dei"]
@@ -39,7 +40,9 @@ def display_correct_guess(letter,most_common_index):
     result = " ".join(blanks_list)
     print(result)
 
-for x in range(3):
+length = int(input("How long should the word be?"))
+
+for x in range(length):
     letter = input("Guess a letter!")
     word_list = get_most_options(letter)
     display_correct_guess(letter,index_for_blank[x])
