@@ -155,7 +155,7 @@
 #         if result % 10 == 0:
 #             print("verified")
 
-#Decode a Message
+# #Decode a Message
 # from operator import index
 # from string import punctuation
 
@@ -215,21 +215,26 @@
      #
      ###
 
-# for row in range(0,3):
-#     whitespace_from_vertical = (-abs(row-1)+1)
-#     first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
+for row in range(0,3):
+    whitespace_from_vertical = (-abs(row-1)+1)
+    first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
+    print(first_half)
 
-#     print(first_half)
-# for row in range(3,7):
-#     whitespace_from_vertical = (-abs(row-6)+5)
-#     first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
-#     print(first_half)
-# for row in reversed(range(3,7)):
-#     whitespace_from_vertical = (-abs(row-6)+5)
-#     first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
-#     print(first_half)
-# print("""       ######
-#        #    #
-#        ######""")
+
+for row in range(3,7):
+    whitespace_from_vertical = (-abs(row-6)+5)
+    first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
+    print(first_half)
+
+    
+for row in reversed(range(3,6)):
+    whitespace_from_vertical = (-abs(row-6)+5)
+    first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
+    print(first_half)
+print("""       ######
+       #    #
+       ######""")
+
+
 
     
