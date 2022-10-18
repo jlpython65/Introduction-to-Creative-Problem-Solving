@@ -160,31 +160,73 @@
 # from string import punctuation
 
 
-# input_list = [18,12312,171,763,98423,1208,216,11,500,18,241,0,32,20620,27,10]
-# punctuation_list = ["fill","!","?",",","."," ",";",'"',"'"]
-# continue_from_index = []
-# #index left off? What is the name of this variable?
+from functools import partial
+
+
+input_list = [18,12312,171,763,98423,1208,216,11,500,18,241,0,32,20620,27,10]
+punctuation_list = ["fill","!","?",",","."," ",";",'"',"'"]
+continue_from_index = []
+#index left off? What is the name of this variable?
 
 # def uppercase_mode():
 #     for input in input_list:
-#         alphabet_index = input % 27
-#         letter = chr(ord('@')+alphabet_index)
+#         character_index = input % 27
+#         letter = chr(ord('@')+character_index)
 
-#         if alphabet_index == 0:
+#         if character_index == 0:
 #             print("Switching to lowercase mode")
 #             del input_list[0:input_list.index(input)+1]
 #             break
 #         print(letter)
+
 # def lowercase_mode():
 #     for input in input_list:
-#         alphabet_index = input %27
-#         letter = chr(ord('`')+alphabet_index)
-#         if alphabet_index == 0:
+#         character_index = input %27
+#         letter = chr(ord('`')+character_index)
+#         if character_index == 0:
 #             print("Switching to punctuation mode")
 #             del input_list[0:input_list.index(input)+1]
-            
 #             break
 #         print(letter)
+
+
+
+def modes(mode,foo):
+    if foo == "foo":
+        print("foo")
+
+    if mode == "upper":
+        modulus_value = "27"
+        letter_case = "@"
+        next_mode = "lower"
+        print("upper")
+
+    if mode == "lower":
+        modulus_value = "27"
+        letter_case = "`"
+        next_mode = "punctuation"
+        print("lower")
+
+    if mode == "punctuation":
+        modulus_value = "9"
+        letter_case = 
+
+
+    for input in input_list:
+        character_index = input % int(f"{modulus_value}")
+        letter = chr(ord(f'{letter_case}')+character_index)
+        print(letter)
+
+        if mode == "punctuation":
+            punctuation = punctuation_list[character_index]
+            print(punctuation)
+
+        if character_index == 0:
+            print(f"Switching to {next_mode} mode")
+            del input_list[0:input_list.index(input)+1]
+            break
+        
+
 # def punctuation_mode():
 #     for input in input_list:
 #         punctuation_index = input %9
@@ -195,10 +237,15 @@
 #             break
 #         print(punctuation)
 
-# for x in range(2):
-#     uppercase_mode()
-#     lowercase_mode()
-#     punctuation_mode()
+lower_mode = partial(modes,foo = "foo")
+
+upper_mode = lower_mode
+
+punctuation_mode = lower_mode
+for x in range(1):
+    upper_mode("upper")
+    lower_mode("lower")
+    punctuation_mode("punctuation")
 
 
 #4. Soul Gem
@@ -215,25 +262,25 @@
      #
      ###
 
-for row in range(0,3):
-    whitespace_from_vertical = (-abs(row-1)+1)
-    first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
-    print(first_half)
+# for row in range(0,3):
+#     whitespace_from_vertical = (-abs(row-1)+1)
+#     first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
+#     print(first_half)
 
 
-for row in range(3,7):
-    whitespace_from_vertical = (-abs(row-6)+5)
-    first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
-    print(first_half)
+# for row in range(3,7):
+#     whitespace_from_vertical = (-abs(row-6)+5)
+#     first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
+#     print(first_half)
 
     
-for row in reversed(range(3,6)):
-    whitespace_from_vertical = (-abs(row-6)+5)
-    first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
-    print(first_half)
-print("""       ######
-       #    #
-       ######""")
+# for row in reversed(range(3,6)):
+#     whitespace_from_vertical = (-abs(row-6)+5)
+#     first_half = " "*(9-whitespace_from_vertical) + "#"+ " "*(whitespace_from_vertical*2) +"#"
+#     print(first_half)
+# print("""       ######
+#        #    #
+#        ######""")
 
 
 
